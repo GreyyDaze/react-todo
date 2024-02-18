@@ -13,11 +13,11 @@ const TaskCard = ({
   const colors = [
     {
       light: "#94a3b8",
-      dark: "#334155",
+      dark: "#475569",
     },
     {
       light: "#a8a29e",
-      dark: "#44403c",
+      dark: "#57534e",
     },
     {
       light: "#fca5a5",
