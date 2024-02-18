@@ -9,41 +9,9 @@ const TaskCard = ({
   editTask,
   markComplete,
   mode,
+  colors,
 }) => {
-  const colors = [
-    {
-      light: "#94a3b8",
-      dark: "#475569",
-    },
-    {
-      light: "#a8a29e",
-      dark: "#57534e",
-    },
-    {
-      light: "#fca5a5",
-      dark: "#b91c1c",
-    },
-    {
-      light: "#facc15",
-      dark: "#a16207",
-    },
-    {
-      light: "#fb923c",
-      dark: "#c2410c",
-    },
-    {
-      light: "#60a5fa",
-      dark: "#1d4ed8",
-    },
-    {
-      light: "#a78bfa",
-      dark: "#6d28d9",
-    },
-    {
-      light: "#f472b6",
-      dark: "#be185d",
-    },
-  ];
+  
 
   const [show, setShow] = useState(false);
 

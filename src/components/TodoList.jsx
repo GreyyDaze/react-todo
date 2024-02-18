@@ -46,14 +46,47 @@ const TodoList = ({ mode, setMode }) => {
     setTaskList([]);
     localStorage.setItem("TaskList", JSON.stringify([]));
   };
-  const bgColor = mode === "light" ? "#f8f9fa" : "#212529";
-  console.log(bgColor);
+
+  const colors = [
+    {
+      light: "#94a3b8",
+      dark: "#475569",
+    },
+    {
+      light: "#a8a29e",
+      dark: "#57534e",
+    },
+    {
+      light: "#fca5a5",
+      dark: "#b91c1c",
+    },
+    {
+      light: "#facc15",
+      dark: "#a16207",
+    },
+    {
+      light: "#fb923c",
+      dark: "#c2410c",
+    },
+    {
+      light: "#60a5fa",
+      dark: "#1d4ed8",
+    },
+    {
+      light: "#a78bfa",
+      dark: "#6d28d9",
+    },
+    {
+      light: "#f472b6",
+      dark: "#be185d",
+    },
+  ];
 
   return (
     <>
       <div
         className="d-flex flex-column align-items-center justify-content-center header"
-        style={{ backgroundColor: `${bgColor}` }}
+        style={{ backgroundColor: mode === "light" ? "#f8f9fa" : "#212529" }}
       >
         <h3 className={mode === "light" ? "text-dark" : "text-light"}>
           Todo List
@@ -108,7 +141,8 @@ const TodoList = ({ mode, setMode }) => {
                     deleteTask={deleteTask}
                     editTask={editTask}
                     markComplete={markComplete}
-                    mode= {mode}
+                    mode={mode}
+                    colors={colors}
                   />
                 </Col>
               ))
@@ -123,11 +157,18 @@ const TodoList = ({ mode, setMode }) => {
                       fill="currentColor"
                       className="bi bi-emoji-smile-fill mb-3"
                       viewBox="0 0 16 16"
+                      style={{
+                        color: mode === "light" ? colors[4].light : "white",
+                      }}
                     >
                       <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8" />
                     </svg>
-                    <Card.Title>
-                      No Task Created Yet. Create Task to see it here
+                    <Card.Title
+                      style={{
+                        color: mode === "light" ? colors[4].dark : "white",
+                      }}
+                    >
+                      No Task Created Yet. Create Task To See It Here.
                     </Card.Title>
                   </Card.Body>
                 </Card>
