@@ -1,0 +1,11 @@
+flow of the program
+initial
+app
+index
+
+home -> to do list
+2 div, one for create and one for card, lastly import modal
+modal component includes form with state
+
+
+the form will state is passed to parent via fnction, by passing function as a propt to child1:54 AM 2/18/2024 
