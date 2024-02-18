@@ -125,7 +125,8 @@ const TaskCard = ({
             style={{
               color: task.completed === true ? "#65a30d" : "#dc2626",
               cursor: "pointer",
-              boxShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+              boxShadow:
+                mode === "light" ? "1px 1px 2px rgba(0, 0, 0, 0.3)" : "none",
             }}
           >
             <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
