@@ -108,6 +108,7 @@ const TodoList = ({ mode, setMode }) => {
                     deleteTask={deleteTask}
                     editTask={editTask}
                     markComplete={markComplete}
+                    mode= {mode}
                   />
                 </Col>
               ))

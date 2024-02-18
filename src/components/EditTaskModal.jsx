@@ -9,6 +9,7 @@ const EditTaskModal = ({
   editTask,
   editableTask,
   index,
+  mode,
 }) => {
   const [taskForm, setTaskForm] = useState({
     title: editableTask.title,

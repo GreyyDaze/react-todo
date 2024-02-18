@@ -2,7 +2,14 @@ import Card from "react-bootstrap/Card";
 import EditTaskModal from "./EditTaskModal";
 import { useState } from "react";
 
-const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
+const TaskCard = ({
+  task,
+  index,
+  deleteTask,
+  editTask,
+  markComplete,
+  mode,
+}) => {
   const colors = [
     {
       light: "#94a3b8",
@@ -21,8 +28,8 @@ const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
       dark: "#a16207",
     },
     {
-      light: "#4ade80",
-      dark: "#047857",
+      light: "#fb923c",
+      dark: "#c2410c",
     },
     {
       light: "#60a5fa",
@@ -33,7 +40,7 @@ const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
       dark: "#6d28d9",
     },
     {
-      light: "##f472b6",
+      light: "#f472b6",
       dark: "#be185d",
     },
   ];
@@ -77,7 +84,10 @@ const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
             height="21"
             fill="currentColor"
             className="bi bi-pen me-3"
-            style={{ color: colors[index % 8].dark, cursor: "pointer" }}
+            style={{
+              color: mode === "light" ? colors[index % 8].dark : "white",
+              cursor: "pointer",
+            }}
             viewBox="0 0 16 16"
           >
             <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
@@ -91,7 +101,7 @@ const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
             fill="currentColor"
             className="bi bi-trash me-3"
             style={{
-              color: colors[index % 8].dark,
+              color: mode === "light" ? colors[index % 8].dark : "white",
               cursor: "pointer",
             }}
             viewBox="0 0 16 16"
@@ -107,14 +117,15 @@ const TaskCard = ({ task, index, deleteTask, editTask, markComplete }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="21"
-            height="21"
+            width="24"
+            height="24"
             fill="currentColor"
-            className="bi bi-check2-circle me-2"
+            className="bi bi-check2-circle me-2 font-bold"
             viewBox="0 0 16 16"
             style={{
-              color: colors[index % 8].dark,
+              color: task.completed === true ? "#65a30d" : "#dc2626",
               cursor: "pointer",
+              boxShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
             }}
           >
             <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
