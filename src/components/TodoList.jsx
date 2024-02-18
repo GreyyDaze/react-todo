@@ -99,7 +99,7 @@ const TodoList = ({ mode, setMode }) => {
         </Container>
         <Container>
           <Row>
-            {taskList &&
+            {taskList.length > 0 ? (
               taskList.map((task, index) => (
                 <Col xs={12} sm={6} md={4} lg={3} key={index}>
                   <TaskCard
@@ -110,8 +110,8 @@ const TodoList = ({ mode, setMode }) => {
                     markComplete={markComplete}
                   />
                 </Col>
-              ))}
-            {!taskList && (
+              ))
+            ) : (
               <div className="mt-4 mb-5 d-flex justify-content-center">
                 <Card>
                   <Card.Body className="text-center">
